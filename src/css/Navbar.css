@@ -1,0 +1,79 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(102, 51, 153, 0.89);
+  color: white;
+}
+
+.logo {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  margin: 0.5rem;
+  color: white;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.navbar-links a:hover {
+  color: lightgray;
+  background: rgb(86, 20, 151);
+}
+
+.navbar-links .active {
+  background: rgb(86, 20, 151);
+}
+
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.visible {
+    display: flex;
+  }
+}
