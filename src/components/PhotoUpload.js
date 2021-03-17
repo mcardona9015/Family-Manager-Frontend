@@ -7,6 +7,7 @@ function PhotoUpload() {
     "REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME: ",
     process.env.REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME
   );
+
   const onDrop = useCallback((acceptedFiles) => {
     // Do something with the files
     const url = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`;
@@ -34,7 +35,10 @@ function PhotoUpload() {
     multiple: false,
   });
   return (
-    <div {...getRootProps()} className="photo-upload">
+    <div
+      {...getRootProps()}
+      className={isDragActive ? "photo-upload active" : "photo-upload"}
+    >
       <input {...getInputProps()} />
       Upload Photos Here
     </div>

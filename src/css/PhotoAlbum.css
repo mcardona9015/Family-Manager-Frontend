@@ -56,4 +56,10 @@
   width: 80%;
   height: 30rem;
   background: rgba(100, 100, 100, 0.712);
+  border: 5px dashed black;
+}
+
+.photo-upload.active {
+  background: rgba(112, 112, 112, 0.356);
+  border: 5px solid black;
 }

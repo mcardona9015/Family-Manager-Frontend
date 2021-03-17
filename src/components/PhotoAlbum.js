@@ -3,6 +3,7 @@ import "../css/PhotoAlbum.css";
 import PhotoToolBar from "./PhotoToolBar";
 import { useState } from "react";
 import PhotoUpload from "./PhotoUpload";
+import { Image } from "cloudinary-react";
 
 function PhotoAlbum() {
   const [uploadPhoto, setUploadPhoto] = useState(false);
