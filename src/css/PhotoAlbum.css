@@ -1,4 +1,9 @@
+.photo-album-container {
+  display: grid;
+}
+
 .photo-album {
+  grid-column: 2;
   line-height: 2;
   -webkit-column-count: 5;
   -webkit-column-gap: 0px;
@@ -48,18 +53,63 @@
 }
 
 /* Upload Photo*/
-.photo-album-container {
-  display: grid;
-}
+
 .photo-upload {
   place-self: center;
   width: 80%;
   height: 30rem;
   background: rgba(100, 100, 100, 0.712);
-  border: 5px dashed black;
+  border: 2px dashed black;
 }
 
 .photo-upload.active {
-  background: rgba(112, 112, 112, 0.356);
-  border: 5px solid black;
+  opacity: 0.8;
+  border: 2px solid black;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  background: rgba(75, 75, 75, 0.425);
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.modal-container {
+  height: 200px;
+  width: 400px;
+  background: rgba(209, 209, 209, 0.651);
+  z-index: 1500;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px black;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr auto;
+  place-items: center;
+  position: absolute;
+}
+
+.close-upload {
+  background: rgba(209, 209, 209, 0.157);
+  margin: 10px 10px 0 0;
+  border: 1px dashed black;
+  grid-row: 1;
+  grid-column: 2;
+  align-self: start;
+  justify-self: end;
+}
+
+.upload-field {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
 }

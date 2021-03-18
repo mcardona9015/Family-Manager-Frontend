@@ -18,12 +18,8 @@ function App() {
 
   // auto-login!
   useEffect(() => {
-    // TODO: check if a user has already logged in (look for their token)
-    // if they've already logged in, use that token to them in again
     const token = localStorage.getItem("token");
     if (token) {
-      // request => GET /me
-      // send the token with the request
       fetch("http://localhost:3000/me", {
         headers: {
           Authorization: `Bearer ${token}`,

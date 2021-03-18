@@ -8,15 +8,11 @@ function Photo({ photo }) {
       className="photo"
       cloudName={process.env.REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME}
       publicId={public_id}
+      alt={title}
     ></Image>
 
     // </div>
   );
 }
-{
-  /* <Image
-cloudName={process.env.REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME}
-publicId="bulbasaur_image_fx8vza.webp"
-  /> */
-}
+
 export default Photo;
