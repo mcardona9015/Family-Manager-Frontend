@@ -27,9 +27,9 @@ function Navbar({ setCurrentUser }) {
         <NavLink to="/calendar">Calendar</NavLink>
         <NavLink to="/lists">Lists</NavLink>
         <NavLink to="/profile">Profile</NavLink>
-        <NavLink to="/home#" onClick={handleLogout}>
+        <a href="/logout" onClick={handleLogout}>
           Logout
-        </NavLink>
+        </a>
       </div>
     </nav>
   );

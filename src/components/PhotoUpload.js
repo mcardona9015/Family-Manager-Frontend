@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-function PhotoUpload() {
+function PhotoUpload({ currentUser }) {
   // REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME
   console.log(
     "REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME: ",
@@ -26,6 +26,27 @@ function PhotoUpload() {
       });
       const data = await response.json();
       console.log("data: ", data);
+
+      const newPhoto = await {
+        photo_album_id: currentUser.id,
+        title: data.original_filename,
+        favorite: false,
+        url: data.url,
+        public_id: data.public_id,
+      };
+      console.log("newPhoto:", newPhoto);
+
+      const backendPost = await fetch("http://localhost:3000/photo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newPhoto),
+      });
+      const photoData = await backendPost.json();
+      console.log("photoData: ", photoData);
+
+      // public_id: "chihiro043_epoatn";
+      // url: "http://res.cloudinary.com/mcardona9015/image/upload/v1616009464/chihiro043_epoatn.jpg";
+      // original_filename: "Mononokehime wallpaper"
     });
     console.log(acceptedFiles);
   }, []);
@@ -34,6 +55,7 @@ function PhotoUpload() {
     accepts: "image/*",
     multiple: false,
   });
+
   return (
     <div
       {...getRootProps()}
