@@ -1,7 +1,11 @@
+import { TiPlusOutline } from "react-icons/ti";
+
 function PhotoToolBar({ showUploadBox }) {
   return (
     <section className="photo-tool-bar">
-      <button onClick={showUploadBox}>Upload Photo</button>
+      <button className="upload-button" onClick={showUploadBox}>
+        <TiPlusOutline size={50} />
+      </button>
     </section>
   );
 }

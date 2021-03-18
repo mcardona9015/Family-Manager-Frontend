@@ -68,7 +68,7 @@ function PhotoUpload({ currentUser, setPhotos, photos, setUploadPhoto }) {
         </button>
         <div className="upload-field" {...getRootProps()}>
           <input {...getInputProps()} />
-          Upload Photos Here
+          Drag or click here to upload photos
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
   grid-template-columns: auto 1fr;
   overflow: auto;
   height: 93.5vh;
-  margin-left: 5rem;
+  margin-left: 4rem;
 }
 
 .photo-album {
@@ -25,6 +25,7 @@
 
 .photo:hover {
   opacity: 0.8;
+  transform: scale(1.05);
 }
 
 @media (max-width: 1200px) {
@@ -61,12 +62,22 @@
 .photo-tool-bar {
   grid-column: 1;
   height: 100%;
-  width: 5rem;
+  width: 4rem;
   position: fixed;
   z-index: 1;
   left: 0;
   overflow-x: hidden;
   padding-top: 20px;
+}
+
+.upload-button {
+  background: none;
+  border: none;
+  color: rebeccapurple;
+}
+
+.upload-button:hover {
+  transform: scale(1.1);
 }
 
 .photo-upload {
@@ -102,7 +113,7 @@
   background: rgba(209, 209, 209, 0.651);
   z-index: 1500;
   border-radius: 10px;
-  box-shadow: 0 0 2px 2px black;
+  /* box-shadow: 0 0 2px 2px black; */
 
   display: grid;
   grid-template-rows: auto 1fr;
@@ -114,7 +125,7 @@
 .close-upload {
   background: rgba(209, 209, 209, 0.157);
   margin: 10px 10px 0 0;
-  border: 1px dashed black;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.822);
   grid-row: 1;
   grid-column: 2;
   align-self: start;
