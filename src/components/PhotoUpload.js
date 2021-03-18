@@ -51,7 +51,7 @@ function PhotoUpload({ currentUser, setPhotos, photos, setUploadPhoto }) {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accepts: "image/*",
-    multiple: false,
+    multiple: true,
   });
 
   return (

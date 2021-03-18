@@ -1,5 +1,9 @@
 .photo-album-container {
   display: grid;
+  grid-template-columns: auto 1fr;
+  overflow: auto;
+  height: 93.5vh;
+  margin-left: 5rem;
 }
 
 .photo-album {
@@ -53,6 +57,17 @@
 }
 
 /* Upload Photo*/
+
+.photo-tool-bar {
+  grid-column: 1;
+  height: 100%;
+  width: 5rem;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
 .photo-upload {
   place-self: center;
