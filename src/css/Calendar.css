@@ -1,0 +1,16 @@
+.calendar-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 93.5vh;
+  place-items: start;
+  gap: 5px;
+  margin-top: 2rem;
+}
+
+.calendar-month {
+  grid-column: 1;
+}
+
+.calendar-day {
+  grid-column: 2;
+}
