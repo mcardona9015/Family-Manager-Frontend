@@ -5,6 +5,8 @@ import "devextreme/dist/css/dx.common.css";
 import "devextreme/dist/css/dx.light.css";
 import React, { useEffect, useState } from "react";
 import "../css/Calendar.css";
+import CalendarDay from "./CalendarDay";
+import CalendarMonth from "./CalendarMonth";
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -27,6 +29,7 @@ function Calendar() {
 
   function handleCellClick(e) {
     setCurrentDate(e.cellData.startDate);
+    console.log(e);
   }
 
   function handleAppointmentAdd(e) {
@@ -54,27 +57,16 @@ function Calendar() {
 
   return (
     <section className="calendar-container">
-      <Scheduler
-        onAppointmentAdded={handleAppointmentAdd}
-        onCellClick={handleCellClick}
-        className="calendar-month"
-        timeZone="America/New_York"
-        dataSource={calendarEvents}
-        views={["week", "month"]}
-        defaultCurrentView="month"
-        defaultCurrentDate={currentDate}
-        height={800}
-        startDayHour={9}
-      />
-      <Scheduler
-        onCurrentDateChange={handleCurrentDayChange}
-        className="calendar-day"
-        timeZone="America/New_York"
-        dataSource={calendarEvents}
-        views={["day"]}
+      <CalendarMonth
+        handleAppointmentAdd={handleAppointmentAdd}
+        handleCellClick={handleCellClick}
+        calendarEvents={calendarEvents}
         currentDate={currentDate}
-        height={800}
-        startDayHour={9}
+      />
+      <CalendarDay
+        handleCurrentDayChange={handleCurrentDayChange}
+        currentDate={currentDate}
+        calendarEvents={calendarEvents}
       />
     </section>
   );

@@ -1,0 +1,26 @@
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 15rem);
+  gap: 20px;
+  place-items: space-between;
+  justify-content: center;
+  margin-left: 4rem;
+}
+
+.lists-container {
+}
+
+.list-container {
+  border: 1px solid black;
+}
+
+.photo-tool-bar {
+  grid-column: 1;
+  height: 100%;
+  width: 4rem;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}

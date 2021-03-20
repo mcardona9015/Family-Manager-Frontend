@@ -8,6 +8,7 @@ import PhotoAlbum from "./PhotoAlbum";
 import Calendar from "./Calendar";
 import Login from "./Login";
 import Home from "./Home";
+import Lists from "./Lists";
 
 function App() {
   // const dispatch = useDispatch();
@@ -59,6 +60,9 @@ function App() {
             </Route>
             <Route exact path="/calendar">
               <Calendar />
+            </Route>
+            <Route exact path="/lists">
+              <Lists />
             </Route>
           </>
         ) : (
