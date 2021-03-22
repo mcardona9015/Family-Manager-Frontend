@@ -61,7 +61,7 @@ function Calendar() {
         handleAppointmentAdd={handleAppointmentAdd}
         handleCellClick={handleCellClick}
         calendarEvents={calendarEvents}
-        currentDate={currentDate}
+        // currentDate={currentDate}
       />
       <CalendarDay
         handleCurrentDayChange={handleCurrentDayChange}

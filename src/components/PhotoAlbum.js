@@ -32,10 +32,19 @@ function PhotoAlbum({ currentUser }) {
     // setPhotos(currentUser.photo_albums[0].photos);
   }, []);
 
+  function favoritePhoto(favoritedPhoto) {
+    const newPhotos = [...photos];
+    const photo = photos.find((photo) => photo.id === favoritedPhoto.id);
+    newPhotos[photo] = favoritedPhoto;
+    setPhotos(newPhotos);
+  }
+
   const photoList =
     photos &&
     photos.map((photo) => {
-      return <Photo key={photo.id} photo={photo} />;
+      return (
+        <Photo key={photo.id} photo={photo} favoritePhoto={favoritePhoto} />
+      );
     });
 
   return (

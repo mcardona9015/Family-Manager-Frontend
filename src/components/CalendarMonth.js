@@ -4,7 +4,7 @@ function CalendarMonth({
   handleAppointmentAdd,
   handleCellClick,
   calendarEvents,
-  currentDate,
+  // currentDate,
 }) {
   return (
     <Scheduler
@@ -16,7 +16,7 @@ function CalendarMonth({
       views={["week", "month"]}
       defaultCurrentView="month"
       defaultCurrentDate={new Date()}
-      currentDate={currentDate}
+      // currentDate={currentDate}
       height={800}
       startDayHour={9}
     />
