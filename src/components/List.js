@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ListItem from "./ListItem";
+import { IoTrashOutline } from "react-icons/io5";
 
-function List({ list }) {
+function List({ list, removeList }) {
   const { title, list_items, id } = list;
   const [listItems, setListItems] = useState(
     list_items.sort((a, b) => a.id - b.id)
@@ -46,16 +47,25 @@ function List({ list }) {
       .then(console.log);
   }
 
+  function deleteList() {
+    fetch(`http://localhost:3000/list/${id}`, {
+      method: "DELETE",
+    });
+    removeList(list);
+  }
+
   return (
     <div className="list-container">
       <input
         className="list-title"
+        placeholder={"Title"}
         defaultValue={title}
         onBlur={updateListTitle}
         onKeyDown={(e) =>
           e.code === "Enter" || e.code === "Tab" ? updateListTitle(e) : null
         }
       ></input>
+      <IoTrashOutline className="list-delete" onClick={deleteList} />
       <section className="list">
         {allListItems}
         <ListItem

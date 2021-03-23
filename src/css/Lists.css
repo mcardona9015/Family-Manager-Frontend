@@ -13,6 +13,7 @@
 .list-container {
   display: grid;
   grid-template-rows: 2rem auto;
+  grid-template-columns: auto 1.5rem;
   border: 1px solid black;
 }
 
@@ -20,6 +21,10 @@
   text-align: center;
   font-size: 1.5rem;
   width: 100%;
+}
+
+.list-delete {
+  place-self: center;
 }
 
 .list-container input {

@@ -48,6 +48,7 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
       <input
         className="list-item"
         value={listItemValue}
+        placeholder={"List item"}
         name="content"
         onChange={(e) => setListItemValue(e.target.value)}
         onBlur={id ? updateListItem : newListItem}

@@ -25,7 +25,7 @@ function Lists() {
   const allLists =
     lists &&
     lists.map((list) => {
-      return <List key={list.id} list={list} />;
+      return <List key={list.id} list={list} removeList={removeList} />;
     });
 
   function handleNewListClick() {
@@ -41,6 +41,11 @@ function Lists() {
         .then((newList) => setLists([...lists, newList]));
     }
     // setShowNewList((showNewList) => !showNewList);
+  }
+
+  function removeList(removedList) {
+    const newLists = lists.filter((list) => list.id !== removedList.id);
+    setLists(newLists);
   }
 
   return (
