@@ -6,11 +6,8 @@ import PhotoUpload from "./PhotoUpload";
 
 function PhotoAlbum({ currentUser }) {
   console.log("currentUser: ", currentUser);
-  console.log(currentUser.photo_albums[0].photos);
   const [uploadPhoto, setUploadPhoto] = useState(false);
   const [photos, setPhotos] = useState(null);
-  console.log("photos: ", photos);
-  // const url = "http://localhost:3000/photo";
 
   function showUploadBox() {
     setUploadPhoto((uploadPhoto) => !uploadPhoto);
@@ -26,7 +23,7 @@ function PhotoAlbum({ currentUser }) {
       })
         .then((r) => r.json())
         .then((userPhotos) => {
-          setPhotos(userPhotos);
+          setPhotos(userPhotos.sort((a, b) => a.id - b.id));
         });
     }
     // setPhotos(currentUser.photo_albums[0].photos);

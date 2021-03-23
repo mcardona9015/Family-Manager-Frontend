@@ -1,6 +1,6 @@
 // import "devextreme/dist/css/dx.common.css";
 // import "devextreme/dist/css/dx.light.css";
-import Scheduler from "devextreme-react/scheduler";
+// import Scheduler from "devextreme-react/scheduler";
 import "devextreme/dist/css/dx.common.css";
 import "devextreme/dist/css/dx.light.css";
 import React, { useEffect, useState } from "react";
