@@ -38,7 +38,7 @@ function Lists() {
         },
       })
         .then((response) => response.json())
-        .then((newList) => setLists({ ...lists, newList }));
+        .then((newList) => setLists([...lists, newList]));
     }
     // setShowNewList((showNewList) => !showNewList);
   }

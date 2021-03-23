@@ -11,7 +11,34 @@
 }
 
 .list-container {
+  display: grid;
+  grid-template-rows: 2rem auto;
   border: 1px solid black;
+}
+
+.list-title {
+  text-align: center;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.list-container input {
+  background: none;
+  border: none;
+}
+
+.list-container input:focus,
+input:hover {
+  outline: none;
+
+  opacity: 0.9;
+  background: rgba(221, 221, 221, 0.541);
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  row-gap: 30px;
 }
 
 .photo-tool-bar {
