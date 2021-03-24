@@ -36,11 +36,21 @@ function PhotoAlbum({ currentUser }) {
     setPhotos(newPhotos);
   }
 
+  function removePhoto(deletedPhoto) {
+    const newPhotos = photos.filter((photo) => photo.id !== deletedPhoto.id);
+    setPhotos(newPhotos);
+  }
+
   const photoList =
     photos &&
     photos.map((photo) => {
       return (
-        <Photo key={photo.id} photo={photo} favoritePhoto={favoritePhoto} />
+        <Photo
+          key={photo.id}
+          photo={photo}
+          favoritePhoto={favoritePhoto}
+          removePhoto={removePhoto}
+        />
       );
     });
 

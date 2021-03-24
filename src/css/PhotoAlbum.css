@@ -76,6 +76,16 @@
   transform: scale(1.2);
 }
 
+.photo-delete {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.photo-delete:hover {
+  transform: scale(1.2);
+}
+
 /* Upload Photo*/
 
 .photo-tool-bar {

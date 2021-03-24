@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoTrashOutline } from "react-icons/io5";
 
 function ListItem({ listItem, listId, removeListItem, addListItem }) {
   const { complete, content, id } = listItem;
@@ -62,7 +63,11 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
         }
         // onClick={newListItem}
       />
-      <input type="button" value="X" onClick={id ? deleteListItem : null} />
+      <IoTrashOutline
+        value="X"
+        className="list-item-delete"
+        onClick={id ? deleteListItem : null}
+      />
     </div>
   );
 }

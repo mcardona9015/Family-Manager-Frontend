@@ -8,6 +8,8 @@
 }
 
 .lists-container {
+  overflow: auto;
+  height: 93.5vh;
 }
 
 .list-container {
@@ -25,6 +27,7 @@
 
 .list-delete {
   place-self: center;
+  cursor: pointer;
 }
 
 .list-container input {
@@ -39,11 +42,21 @@ input:hover {
   opacity: 0.9;
   background: rgba(221, 221, 221, 0.541);
 }
+.list {
+  grid-column: span 2;
+}
 
 .list-item {
   display: grid;
   grid-template-columns: repeat(3, auto);
   row-gap: 30px;
+  /* width: 100%; */
+  /* grid-column: span 2; */
+}
+
+.list-item-delete {
+  place-self: center;
+  cursor: pointer;
 }
 
 .photo-tool-bar {

@@ -65,7 +65,7 @@ function List({ list, removeList }) {
           e.code === "Enter" || e.code === "Tab" ? updateListTitle(e) : null
         }
       ></input>
-      <IoTrashOutline className="list-delete" onClick={deleteList} />
+      <IoTrashOutline className="list-delete" size="20" onClick={deleteList} />
       <section className="list">
         {allListItems}
         <ListItem
