@@ -11,6 +11,7 @@ import CalendarMonth from "./CalendarMonth";
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [calendarEvents, setCalendarEvents] = useState(null);
+  console.log("calendarEvents: ", calendarEvents);
   const url = "http://localhost:3000/calendar";
 
   useEffect(() => {
@@ -64,6 +65,7 @@ function Calendar() {
         // currentDate={currentDate}
       />
       <CalendarDay
+        handleAppointmentAdd={handleAppointmentAdd}
         handleCurrentDayChange={handleCurrentDayChange}
         currentDate={currentDate}
         calendarEvents={calendarEvents}
