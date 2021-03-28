@@ -46,7 +46,10 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
   return (
     <div className="list-item">
       <input type="checkbox" defaultValue={complete} />
-      <input
+      <textarea
+        wrap="soft"
+        rows="5"
+        cols="15"
         className="list-item"
         value={listItemValue}
         placeholder={"List item"}

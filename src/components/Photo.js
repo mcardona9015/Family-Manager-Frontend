@@ -3,12 +3,20 @@ import { useState } from "react";
 import { FiStar } from "react-icons/fi";
 import { IoTrashOutline } from "react-icons/io5";
 
-function Photo({ photo, favoritePhoto, removePhoto }) {
+function Photo({
+  photo,
+  favoritePhoto,
+  removePhoto,
+  setShowPhoto,
+  setCurrentPhoto,
+}) {
   const { public_id, title, id, favorite } = photo;
   const [isFavorite, setIsFavorite] = useState(favorite);
 
   function handlePhotoClick(e) {
     console.log(photo);
+    setShowPhoto(true);
+    setCurrentPhoto(photo);
     // console.log("isFavorite: ", isFavorite);
   }
 

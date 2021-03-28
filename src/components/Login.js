@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "../css/Login.css";
+import Signup from "./Signup";
 
 function Login({ setCurrentUser }) {
   const [formData, setFormData] = useState({
@@ -8,6 +10,7 @@ function Login({ setCurrentUser }) {
   });
   const [errors, setErrors] = useState([]);
   const history = useHistory();
+  const [signup, setSignup] = useState(false);
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -46,20 +49,20 @@ function Login({ setCurrentUser }) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} autoComplete="off">
+    <section className="login-container">
+      <form className="login-form" onSubmit={handleSubmit} autoComplete="off">
         <h1>Login</h1>
-        <label>Username</label>
         <input
           type="text"
           name="username"
+          placeholder="username"
           value={formData.username}
           onChange={handleChange}
         />
-        <label>Password</label>
         <input
           type="password"
           name="password"
+          placeholder="password"
           value={formData.password}
           onChange={handleChange}
         />
@@ -72,7 +75,13 @@ function Login({ setCurrentUser }) {
           ))}
         <input type="submit" value="Login" />
       </form>
-    </div>
+      <section className="signup-container">
+        <button onClick={() => setSignup(true)}>Signup</button>
+      </section>
+      {signup ? (
+        <Signup setCurrentUser={setCurrentUser} setSignup={setSignup} />
+      ) : null}
+    </section>
   );
 }
 

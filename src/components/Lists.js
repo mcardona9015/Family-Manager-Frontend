@@ -2,7 +2,7 @@ import List from "./List";
 import "../css/Lists.css";
 import ListsToolBar from "./ListsToolBar";
 import { useEffect, useState } from "react";
-import NewList from "./NewList";
+// import NewList from "./NewList";
 
 function Lists() {
   // const [showNewList, setShowNewList] = useState(false);

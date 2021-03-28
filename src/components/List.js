@@ -56,7 +56,7 @@ function List({ list, removeList }) {
 
   return (
     <div className="list-container">
-      <input
+      <textarea
         className="list-title"
         placeholder={"Title"}
         defaultValue={title}
@@ -64,7 +64,7 @@ function List({ list, removeList }) {
         onKeyDown={(e) =>
           e.code === "Enter" || e.code === "Tab" ? updateListTitle(e) : null
         }
-      ></input>
+      ></textarea>
       <IoTrashOutline className="list-delete" size="20" onClick={deleteList} />
       <section className="list">
         {allListItems}

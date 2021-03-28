@@ -8,6 +8,8 @@ function PhotoAlbum({ currentUser }) {
   console.log("currentUser: ", currentUser);
   const [uploadPhoto, setUploadPhoto] = useState(false);
   const [photos, setPhotos] = useState(null);
+  const [showPhoto, setShowPhoto] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState(null);
 
   function showUploadBox() {
     setUploadPhoto((uploadPhoto) => !uploadPhoto);
@@ -50,6 +52,8 @@ function PhotoAlbum({ currentUser }) {
           photo={photo}
           favoritePhoto={favoritePhoto}
           removePhoto={removePhoto}
+          setShowPhoto={setShowPhoto}
+          setCurrentPhoto={setCurrentPhoto}
         />
       );
     });
@@ -66,6 +70,19 @@ function PhotoAlbum({ currentUser }) {
         />
       ) : null}
       <section className="photo-album">{photoList}</section>
+      {showPhoto ? (
+        <div className="modal-background" onClick={() => setShowPhoto(false)}>
+          <div className="full-photo-container">
+            <Photo
+              photo={currentPhoto}
+              favoritePhoto={favoritePhoto}
+              removePhoto={removePhoto}
+              setShowPhoto={setShowPhoto}
+              setCurrentPhoto={setCurrentPhoto}
+            />
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

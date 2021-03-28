@@ -5,14 +5,14 @@ import { Image } from "cloudinary-react";
 
 function Home({ currentUser }) {
   const { calendars, lists, photo_albums } = currentUser;
-  const fav_photos = photo_albums[0].photos.filter(
-    (photo) => photo.favorite === true
-  );
-  const photo = fav_photos[Math.floor(Math.random() * fav_photos.length)];
+  let fav_photos = photo_albums.length
+    ? photo_albums[0].photos.filter((photo) => photo.favorite === true)
+    : null;
+  let photo = fav_photos
+    ? fav_photos[Math.floor(Math.random() * fav_photos.length)]
+    : null;
   console.log("currentUser: ", currentUser);
-  console.log("photo_albums: ", photo_albums);
-  console.log("lists: ", lists);
-  console.log("calendars: ", calendars);
+
   return (
     <section className="home-container">
       {photo ? (
@@ -34,7 +34,7 @@ function Home({ currentUser }) {
         />
       </section>
       <section className="recent-list-container">
-        <List className="recent-list" list={lists[0]} />
+        {lists.length ? <List className="recent-list" list={lists[0]} /> : null}
       </section>
     </section>
   );

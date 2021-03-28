@@ -34,7 +34,7 @@
   position: relative;
   grid-column: 2;
   top: 10%;
-  height: fill;
+  /* height: fill; */
 }
 
 .recent-list-container {
