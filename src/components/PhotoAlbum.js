@@ -3,6 +3,7 @@ import "../css/PhotoAlbum.css";
 import PhotoToolBar from "./PhotoToolBar";
 import { useState, useEffect } from "react";
 import PhotoUpload from "./PhotoUpload";
+import FullPhoto from "./FullPhoto";
 
 function PhotoAlbum({ currentUser }) {
   console.log("currentUser: ", currentUser);
@@ -69,20 +70,18 @@ function PhotoAlbum({ currentUser }) {
           setUploadPhoto={setUploadPhoto}
         />
       ) : null}
-      <section className="photo-album">{photoList}</section>
-      {showPhoto ? (
-        <div className="modal-background" onClick={() => setShowPhoto(false)}>
-          <div className="full-photo-container">
-            <Photo
-              photo={currentPhoto}
-              favoritePhoto={favoritePhoto}
-              removePhoto={removePhoto}
-              setShowPhoto={setShowPhoto}
-              setCurrentPhoto={setCurrentPhoto}
-            />
-          </div>
-        </div>
-      ) : null}
+      <section className="photo-album">
+        {photoList}
+        {showPhoto ? (
+          <FullPhoto
+            photo={currentPhoto}
+            favoritePhoto={favoritePhoto}
+            removePhoto={removePhoto}
+            setShowPhoto={setShowPhoto}
+            setCurrentPhoto={setCurrentPhoto}
+          />
+        ) : null}
+      </section>
     </section>
   );
 }

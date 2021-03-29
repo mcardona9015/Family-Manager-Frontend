@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FiStar } from "react-icons/fi";
 import { IoTrashOutline } from "react-icons/io5";
 
-function Photo({
+function FullPhoto({
   photo,
   favoritePhoto,
   removePhoto,
@@ -15,9 +15,8 @@ function Photo({
 
   function handlePhotoClick(e) {
     console.log(photo);
-    setShowPhoto(true);
-    setCurrentPhoto(photo);
-    // e.target.classList.add('open');
+    // setShowPhoto(true);
+    // setCurrentPhoto(photo);
     // console.log("isFavorite: ", isFavorite);
   }
 
@@ -47,28 +46,38 @@ function Photo({
     }).then(() => removePhoto(photo));
   }
 
+  function hideModal(e) {
+    if (e.target.className.includes("modal")) {
+      setShowPhoto(false);
+    }
+  }
+
   return (
-    <div className="photo-container">
-      <Image
-        className="photo"
-        cloudName={process.env.REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME}
-        publicId={public_id}
-        alt={title}
-        onClick={handlePhotoClick}
-      ></Image>
-      <FiStar
-        size={20}
-        className="favorite-star"
-        onClick={handleFavoriteClick}
-        fill={isFavorite ? "gold" : "none"}
-      />
-      <IoTrashOutline
-        className="photo-delete"
-        size="20"
-        onClick={deletePhoto}
-      />
+    <div className="modal-background" onClick={hideModal}>
+      <div className="photo-show-container">
+        <div className="full-photo-container">
+          <Image
+            className="full-photo open"
+            cloudName={process.env.REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME}
+            publicId={public_id}
+            alt={title}
+            onClick={handlePhotoClick}
+          ></Image>
+          <FiStar
+            size={20}
+            className="favorite-star"
+            onClick={handleFavoriteClick}
+            fill={isFavorite ? "gold" : "none"}
+          />
+          <IoTrashOutline
+            className="photo-delete"
+            size="20"
+            onClick={deletePhoto}
+          />
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Photo;
+export default FullPhoto;
