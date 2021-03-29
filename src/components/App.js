@@ -53,7 +53,7 @@ function App() {
           <>
             <Navbar setCurrentUser={setCurrentUser} />
             <Route exact path="/home">
-              <Home currentUser={currentUser} />
+              <Home currentUser={currentUser} setCurrentUser={setCurrentUser} />
             </Route>
             <Route exact path="/photos">
               <PhotoAlbum currentUser={currentUser} />

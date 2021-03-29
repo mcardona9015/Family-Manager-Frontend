@@ -9,11 +9,13 @@ function FullPhoto({
   removePhoto,
   setShowPhoto,
   setCurrentPhoto,
+  showPhoto,
 }) {
   const { public_id, title, id, favorite } = photo;
   const [isFavorite, setIsFavorite] = useState(favorite);
 
   function handlePhotoClick(e) {
+    console.log("e: ", e);
     console.log(photo);
     // setShowPhoto(true);
     // setCurrentPhoto(photo);
@@ -55,9 +57,12 @@ function FullPhoto({
   return (
     <div className="modal-background" onClick={hideModal}>
       <div className="photo-show-container">
-        <div className="full-photo-container">
+        <div
+          className="full-photo-container"
+          // style={{ width: "500px", height: "500px" }}
+        >
           <Image
-            className="full-photo open"
+            className={showPhoto ? "full-photo open" : "full-photo"}
             cloudName={process.env.REACT_APP_PUBLIC_CLOUDINARY_CLOUD_NAME}
             publicId={public_id}
             alt={title}
@@ -68,11 +73,13 @@ function FullPhoto({
             className="favorite-star"
             onClick={handleFavoriteClick}
             fill={isFavorite ? "gold" : "none"}
+            color="gold"
           />
           <IoTrashOutline
             className="photo-delete"
             size="20"
             onClick={deletePhoto}
+            color="red"
           />
         </div>
       </div>

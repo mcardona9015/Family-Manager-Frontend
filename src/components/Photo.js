@@ -14,11 +14,10 @@ function Photo({
   const [isFavorite, setIsFavorite] = useState(favorite);
 
   function handlePhotoClick(e) {
+    console.log("e: ", e);
     console.log(photo);
     setShowPhoto(true);
     setCurrentPhoto(photo);
-    // e.target.classList.add('open');
-    // console.log("isFavorite: ", isFavorite);
   }
 
   function handleFavoriteClick() {

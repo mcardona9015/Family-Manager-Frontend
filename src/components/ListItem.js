@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
+import TextareaAutosize from "react-textarea-autosize";
 
 function ListItem({ listItem, listId, removeListItem, addListItem }) {
   const { complete, content, id } = listItem;
   const [listItemValue, setListItemValue] = useState(content);
+  const [checked, setChecked] = useState(complete);
 
   function newListItem(e) {
     if (e.target.value) {
@@ -43,14 +45,32 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
     removeListItem(listItem);
   }
 
+  function onCheck(e) {
+    console.log(e.target.checked);
+    if (id) {
+      setChecked((checked) => !checked);
+      fetch(`http://localhost:3000/listItem/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          list: { complete: e.target.checked },
+        }),
+      })
+        .then((response) => response.json())
+        .then(console.log);
+    }
+  }
+
   return (
     <div className="list-item">
-      <input type="checkbox" defaultValue={complete} />
-      <textarea
+      <input onChange={onCheck} type="checkbox" checked={checked} />
+      <TextareaAutosize
         wrap="soft"
-        rows="5"
-        cols="15"
-        className="list-item"
+        // rows="5"
+        // cols="15"
+        className={checked ? "list-item-content checked" : "list-item-content"}
         value={listItemValue}
         placeholder={"List item"}
         name="content"

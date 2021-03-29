@@ -79,6 +79,7 @@ function PhotoAlbum({ currentUser }) {
             removePhoto={removePhoto}
             setShowPhoto={setShowPhoto}
             setCurrentPhoto={setCurrentPhoto}
+            showPhoto={showPhoto}
           />
         ) : null}
       </section>

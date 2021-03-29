@@ -2,9 +2,11 @@ import Scheduler from "devextreme-react/scheduler";
 import List from "./List";
 import "../css/Home.css";
 import { Image } from "cloudinary-react";
+import { useEffect } from "react";
 
-function Home({ currentUser }) {
+function Home({ currentUser, setCurrentUser }) {
   const { calendars, lists, photo_albums } = currentUser;
+
   let fav_photos = photo_albums.length
     ? photo_albums[0].photos.filter((photo) => photo.favorite === true)
     : null;

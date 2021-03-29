@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ListItem from "./ListItem";
 import { IoTrashOutline } from "react-icons/io5";
+import TextareaAutosize from "react-textarea-autosize";
 
 function List({ list, removeList }) {
   const { title, list_items, id } = list;
@@ -56,7 +57,7 @@ function List({ list, removeList }) {
 
   return (
     <div className="list-container">
-      <textarea
+      <TextareaAutosize
         className="list-title"
         placeholder={"Title"}
         defaultValue={title}
@@ -64,7 +65,7 @@ function List({ list, removeList }) {
         onKeyDown={(e) =>
           e.code === "Enter" || e.code === "Tab" ? updateListTitle(e) : null
         }
-      ></textarea>
+      ></TextareaAutosize>
       <IoTrashOutline className="list-delete" size="20" onClick={deleteList} />
       <section className="list">
         {allListItems}
