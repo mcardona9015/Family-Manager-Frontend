@@ -50,7 +50,13 @@ function Login({ setCurrentUser }) {
 
   return (
     <section className="login-container">
-      <section className="promo-container"></section>
+      <section className="promo-container">
+        <img
+          className="logo-image"
+          src="test-logo-upscaled.png"
+          alt="logo"
+        ></img>
+      </section>
       <form className="login-form" onSubmit={handleSubmit} autoComplete="off">
         <h1>Login</h1>
         <input
@@ -60,6 +66,7 @@ function Login({ setCurrentUser }) {
           value={formData.username}
           onChange={handleChange}
         />
+        <br />
         <input
           type="password"
           name="password"
@@ -67,6 +74,7 @@ function Login({ setCurrentUser }) {
           value={formData.password}
           onChange={handleChange}
         />
+        <br />
 
         {errors &&
           errors.map((error) => (

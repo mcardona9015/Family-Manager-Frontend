@@ -2,12 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(97, 49, 145, 0.904);
+  background: rgba(0, 63, 11, 0.904);
   color: white;
   position: sticky;
   width: 100%;
   top: 0px;
   /* overflow: hidden; */
+}
+
+.navbar img {
+  height: 3rem;
 }
 
 .logo {

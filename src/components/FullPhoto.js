@@ -49,7 +49,7 @@ function FullPhoto({
   }
 
   function hideModal(e) {
-    if (e.target.className.includes("modal")) {
+    if (e.target.className === "modal-background") {
       setShowPhoto(false);
     }
   }

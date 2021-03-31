@@ -48,10 +48,16 @@ function Signup({ setSignup, setCurrentUser }) {
 
   const { username, profile_pic, email, password } = formData;
 
+  function handleClick(e) {
+    if (e.target.className === "modal-background") {
+      setSignup(false);
+    }
+  }
+
   return (
-    <div className="modal-background">
-      <div className="modal-container">
-        <button onClick={() => setSignup(false)}>X</button>
+    <div className="modal-background" onClick={handleClick}>
+      <div className="signup-form-container">
+        {/* <button onClick={() => setSignup(false)}>X</button> */}
         <section className="signup-form">
           <form onSubmit={handleSubmit} autoComplete="off">
             <h1>Signup</h1>
@@ -63,6 +69,7 @@ function Signup({ setSignup, setCurrentUser }) {
               value={username}
               onChange={handleChange}
             />
+            <br />
 
             <input
               placeholder="Profile Picture"
@@ -71,6 +78,7 @@ function Signup({ setSignup, setCurrentUser }) {
               value={profile_pic}
               onChange={handleChange}
             />
+            <br />
             {/* <img
               src={
                 profile_pic.length
@@ -84,8 +92,10 @@ function Signup({ setSignup, setCurrentUser }) {
               placeholder="E-mail"
               name="email"
               value={email}
+              type="text"
               onChange={handleChange}
             />
+            <br />
 
             <input
               placeholder="Password"
@@ -95,6 +105,7 @@ function Signup({ setSignup, setCurrentUser }) {
               value={password}
               onChange={handleChange}
             />
+            <br />
 
             {errors.map((error) => (
               <p key={error} style={{ color: "red" }}>

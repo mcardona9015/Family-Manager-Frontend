@@ -15,9 +15,12 @@ function Navbar({ setCurrentUser }) {
 
   return (
     <nav className="navbar">
-      <NavLink to="/home" className="logo">
-        Family Manager
-      </NavLink>
+      <div>
+        <img src="test-logo-image-upscaled.png" alt="logo"></img>
+        <NavLink to="/home" className="logo">
+          Family Manager
+        </NavLink>
+      </div>
       <div onClick={navButtonClick} className="toggle-button">
         <span className="bar"></span>
         <span className="bar"></span>

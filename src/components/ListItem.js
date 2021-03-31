@@ -2,7 +2,13 @@ import { useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
 import TextareaAutosize from "react-textarea-autosize";
 
-function ListItem({ listItem, listId, removeListItem, addListItem }) {
+function ListItem({
+  listItem,
+  listId,
+  removeListItem,
+  addListItem,
+  sortListItems,
+}) {
   const { complete, content, id } = listItem;
   const [listItemValue, setListItemValue] = useState(content);
   const [checked, setChecked] = useState(complete);
@@ -61,7 +67,7 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
         }),
       })
         .then((response) => response.json())
-        .then(console.log);
+        .then(sortListItems);
     }
   }
 

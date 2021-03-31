@@ -2,6 +2,7 @@ import Scheduler from "devextreme-react/scheduler";
 import List from "./List";
 import "../css/Home.css";
 import { Image } from "cloudinary-react";
+import { useEffect } from "react";
 // import { useEffect } from "react";
 
 function Home({ currentUser, setCurrentUser }) {

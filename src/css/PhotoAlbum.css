@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   overflow: auto;
-  height: 93.5vh;
+  height: 93vh;
   margin-left: 4rem;
 }
 

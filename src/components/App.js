@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 // import { setCurrentUser } from "../redux/CurrentUserSlice";
 import Navbar from "./Navbar";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, useLocation } from "react-router-dom";
 import PhotoAlbum from "./PhotoAlbum";
 import Calendar from "./Calendar";
 import Login from "./Login";
@@ -14,8 +14,27 @@ function App() {
   // const dispatch = useDispatch();
   // const currentUser = useSelector((storeState) => storeState.currentUser);
   const [currentUser, setCurrentUser] = useState(null);
-  const [lists, setLists] = useState(null);
+  // const [lists, setLists] = useState(null);
   const [photos, setPhotos] = useState(null);
+  let location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/home") {
+      const token = localStorage.getItem("token");
+      if (token) {
+        fetch("http://localhost:3000/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then((r) => r.json())
+          .then((user) => {
+            setCurrentUser(user);
+          })
+          .then(console.log(location));
+      }
+    }
+  }, [location]);
 
   console.log(currentUser);
 
@@ -30,11 +49,6 @@ function App() {
       })
         .then((r) => r.json())
         .then((user) => {
-          // response => setCurrentUser
-          // dispatch({ type: "currentUser/setCurrentUser", payload: user });
-          // dispatch(setCurrentUser(user));
-          // console.log(currentUser);
-
           setCurrentUser(user);
         });
     }
@@ -58,7 +72,7 @@ function App() {
               <Home
                 currentUser={currentUser}
                 setCurrentUser={setCurrentUser}
-                lists={lists}
+                // lists={lists}
               />
             </Route>
             <Route exact path="/photos">
@@ -72,7 +86,8 @@ function App() {
               <Calendar />
             </Route>
             <Route exact path="/lists">
-              <Lists lists={lists} setLists={setLists} />
+              {/* <Lists lists={lists} setLists={setLists} /> */}
+              <Lists />
             </Route>
           </>
         ) : (

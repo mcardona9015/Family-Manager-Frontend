@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, auto);
   justify-items: center;
   overflow: auto;
-  height: 93.5vh;
+  height: 93vh;
   position: relative;
 }
 

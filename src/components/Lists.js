@@ -4,9 +4,9 @@ import ListsToolBar from "./ListsToolBar";
 import { useEffect, useState } from "react";
 // import NewList from "./NewList";
 
-function Lists({ lists, setLists }) {
+function Lists() {
   // const [showNewList, setShowNewList] = useState(false);
-
+  const [lists, setLists] = useState(null);
   console.log("lists: ", lists);
 
   useEffect(() => {

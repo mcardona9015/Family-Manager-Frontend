@@ -19,6 +19,8 @@ function List({ list, removeList }) {
         listId={id}
         removeListItem={removeListItem}
         addListItem={addListItem}
+        setListItems={setListItems}
+        sortListItems={sortListItems}
       />
     );
   });
@@ -58,6 +60,17 @@ function List({ list, removeList }) {
     removeList(list);
   }
 
+  function sortListItems(item) {
+    const newListItems = [...listItems];
+    const listItem = listItems.find((listItem) => listItem.id === item.id);
+    newListItems[listItem] = item;
+    newListItems
+      .sort((a, b) => a.id - b.id)
+      .sort((a, b) => a.complete - b.complete);
+    setListItems(newListItems);
+    console.log(newListItems);
+  }
+
   return (
     <div className="list-container">
       <TextareaAutosize
@@ -77,6 +90,7 @@ function List({ list, removeList }) {
           listId={id}
           removeListItem={removeListItem}
           addListItem={addListItem}
+          sortListItems={sortListItems}
         />
       </section>
     </div>

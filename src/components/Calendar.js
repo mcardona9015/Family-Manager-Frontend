@@ -34,6 +34,7 @@ function Calendar() {
 
   function handleAppointmentAdd(e) {
     console.log("e: ", e);
+    // e.preventDefault();
     const appointmentData = e.appointmentData;
     console.log("appointmentData: ", appointmentData);
     const token = localStorage.getItem("token");
