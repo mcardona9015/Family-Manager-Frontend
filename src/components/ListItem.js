@@ -8,6 +8,7 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
   const [checked, setChecked] = useState(complete);
 
   function newListItem(e) {
+    e.preventDefault();
     if (e.target.value) {
       fetch("http://localhost:3000/listItem", {
         method: "POST",
@@ -25,6 +26,7 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
   }
 
   function updateListItem(e) {
+    e.preventDefault();
     fetch(`http://localhost:3000/listItem/${id}`, {
       method: "PATCH",
       headers: {
@@ -78,7 +80,7 @@ function ListItem({ listItem, listId, removeListItem, addListItem }) {
         onBlur={id ? updateListItem : newListItem}
         // onKeyDown={console.log}
         onKeyDown={(e) =>
-          e.code === "Enter" || e.code === "Tab"
+          (e.code === "Enter" && !e.shiftKey) || e.code === "Tab"
             ? id
               ? updateListItem(e)
               : newListItem(e)

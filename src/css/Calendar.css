@@ -14,3 +14,10 @@
 .calendar-day {
   grid-column: 2;
 }
+
+.calendar-month.dx-scheduler {
+  background: rgb(24, 23, 23);
+}
+.dx-scheduler-date-table div {
+  color: rgb(255, 255, 255);
+}

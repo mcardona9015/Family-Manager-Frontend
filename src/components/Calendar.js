@@ -23,8 +23,7 @@ function Calendar() {
         },
       })
         .then((response) => response.json())
-        .then(setCalendarEvents)
-        .then(console.log("activated"));
+        .then(setCalendarEvents);
     }
   }, []);
 
@@ -48,7 +47,11 @@ function Calendar() {
         body: JSON.stringify(appointmentData),
       })
         .then((response) => response.json())
-        .then(console.log);
+        .then((newData) => {
+          const newEvents = [...calendarEvents];
+          newEvents.push(newData);
+          setCalendarEvents(newEvents);
+        });
     }
   }
 

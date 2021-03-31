@@ -2,10 +2,16 @@ import Scheduler from "devextreme-react/scheduler";
 import List from "./List";
 import "../css/Home.css";
 import { Image } from "cloudinary-react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function Home({ currentUser, setCurrentUser }) {
   const { calendars, lists, photo_albums } = currentUser;
+
+  let mostRecentList = lists.length
+    ? lists.sort((a, b) => new Date(a.updated_at) - new Date(b.updated_at))[
+        lists.length - 1
+      ]
+    : null;
 
   let fav_photos = photo_albums.length
     ? photo_albums[0].photos.filter((photo) => photo.favorite === true)
@@ -36,7 +42,9 @@ function Home({ currentUser, setCurrentUser }) {
         />
       </section>
       <section className="recent-list-container">
-        {lists.length ? <List className="recent-list" list={lists[0]} /> : null}
+        {lists.length ? (
+          <List className="recent-list" list={mostRecentList} />
+        ) : null}
       </section>
     </section>
   );

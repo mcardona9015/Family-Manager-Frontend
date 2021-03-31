@@ -14,6 +14,8 @@ function App() {
   // const dispatch = useDispatch();
   // const currentUser = useSelector((storeState) => storeState.currentUser);
   const [currentUser, setCurrentUser] = useState(null);
+  const [lists, setLists] = useState(null);
+  const [photos, setPhotos] = useState(null);
 
   console.log(currentUser);
 
@@ -53,16 +55,24 @@ function App() {
           <>
             <Navbar setCurrentUser={setCurrentUser} />
             <Route exact path="/home">
-              <Home currentUser={currentUser} setCurrentUser={setCurrentUser} />
+              <Home
+                currentUser={currentUser}
+                setCurrentUser={setCurrentUser}
+                lists={lists}
+              />
             </Route>
             <Route exact path="/photos">
-              <PhotoAlbum currentUser={currentUser} />
+              <PhotoAlbum
+                currentUser={currentUser}
+                photos={photos}
+                setPhotos={setPhotos}
+              />
             </Route>
             <Route exact path="/calendar">
               <Calendar />
             </Route>
             <Route exact path="/lists">
-              <Lists />
+              <Lists lists={lists} setLists={setLists} />
             </Route>
           </>
         ) : (

@@ -5,10 +5,10 @@ import { useState, useEffect } from "react";
 import PhotoUpload from "./PhotoUpload";
 import FullPhoto from "./FullPhoto";
 
-function PhotoAlbum({ currentUser }) {
+function PhotoAlbum({ currentUser, photos, setPhotos }) {
   console.log("currentUser: ", currentUser);
   const [uploadPhoto, setUploadPhoto] = useState(false);
-  const [photos, setPhotos] = useState(null);
+
   const [showPhoto, setShowPhoto] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState(null);
 
@@ -70,6 +70,7 @@ function PhotoAlbum({ currentUser }) {
           setUploadPhoto={setUploadPhoto}
         />
       ) : null}
+
       <section className="photo-album">
         {photoList}
         {showPhoto ? (

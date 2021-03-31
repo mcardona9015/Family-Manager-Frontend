@@ -50,6 +50,7 @@ function Login({ setCurrentUser }) {
 
   return (
     <section className="login-container">
+      <section className="promo-container"></section>
       <form className="login-form" onSubmit={handleSubmit} autoComplete="off">
         <h1>Login</h1>
         <input

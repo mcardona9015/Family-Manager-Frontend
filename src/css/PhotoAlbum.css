@@ -177,7 +177,7 @@
 
 .photo-show-container {
   height: 70%;
-  width: fill;
+  width: 100%;
   background: rgba(0, 0, 0, 0.561);
   z-index: 1500;
   border-radius: 10px;

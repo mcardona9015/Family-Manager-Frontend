@@ -15,7 +15,9 @@ function Navbar({ setCurrentUser }) {
 
   return (
     <nav className="navbar">
-      <button className="logo">Logo</button>
+      <NavLink to="/home" className="logo">
+        Family Manager
+      </NavLink>
       <div onClick={navButtonClick} className="toggle-button">
         <span className="bar"></span>
         <span className="bar"></span>
@@ -26,7 +28,7 @@ function Navbar({ setCurrentUser }) {
         <NavLink to="/photos">Photo Album</NavLink>
         <NavLink to="/calendar">Calendar</NavLink>
         <NavLink to="/lists">Lists</NavLink>
-        <NavLink to="/profile">Profile</NavLink>
+        {/* <NavLink to="/profile">Profile</NavLink> */}
         <a href="/logout" onClick={handleLogout}>
           Logout
         </a>

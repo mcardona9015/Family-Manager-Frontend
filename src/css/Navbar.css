@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(102, 51, 153, 0.904);
+  background: rgba(97, 49, 145, 0.904);
   color: white;
   position: sticky;
   width: 100%;
@@ -11,6 +11,7 @@
 }
 
 .logo {
+  text-decoration: none;
   background: none;
   border: none;
   font-size: 2.5rem;

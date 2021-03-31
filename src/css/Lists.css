@@ -19,15 +19,19 @@
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: auto auto;
-  border: 1px solid black;
+  box-shadow: 5px 5px 2px 2px rgba(100, 100, 100, 0.794);
   width: auto;
+  min-height: 15rem;
   grid-auto-flow: dense;
+  background: rgba(255, 255, 255, 0.541);
+  padding: 1rem;
 }
 
 .list-title {
   text-align: center;
   font-size: 1.5rem;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .list-delete {
