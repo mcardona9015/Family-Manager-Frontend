@@ -18,6 +18,11 @@
   align-self: start;
   justify-self: center;
   display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 0.75em rgba(0, 63, 11, 0.904);
+  border-radius: 20px;
+  padding: 1rem;
+  font-size: larger;
 }
 
 .signup-form-container {
@@ -58,8 +63,9 @@
   border-radius: 10px;
   text-align: center;
   margin: 4px;
-  padding: 2px;
+  padding: 4px;
   font-size: large;
+  outline: none;
 }
 
 .signup-form input[type="submit"] {
@@ -78,4 +84,20 @@
 
 .logo-image {
   width: 100%;
+}
+
+.login-container input[type="submit"],
+.login-container button {
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  width: 7rem;
+  height: 2rem;
+  font-size: large;
+  margin-top: 1rem;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  transform: scale(1.1);
 }

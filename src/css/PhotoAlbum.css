@@ -106,7 +106,8 @@
   color: rebeccapurple;
   background: none;
   border: none;
-  position: relative;
+  width: auto;
+  /* position: relative; */
 }
 
 .upload-button:hover,
@@ -117,7 +118,8 @@
 .favorites-button {
   background: none;
   border: none;
-  position: relative;
+  width: auto;
+  /* position: relative; */
 }
 
 .photo-upload {
