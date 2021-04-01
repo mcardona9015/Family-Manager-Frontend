@@ -73,7 +73,13 @@ function ListItem({
 
   return (
     <div className="list-item">
-      <input onChange={onCheck} type="checkbox" checked={checked} />
+      <input
+        onChange={onCheck}
+        type="checkbox"
+        checked={checked}
+        className="checkbox"
+      />
+
       <TextareaAutosize
         wrap="soft"
         // rows="5"

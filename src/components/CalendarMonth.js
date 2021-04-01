@@ -9,7 +9,7 @@ function CalendarMonth({
   return (
     <Scheduler
       onAppointmentAdded={handleAppointmentAdd}
-      onCellClick={handleCellClick}
+      // onCellClick={handleCellClick}
       className="calendar-month"
       timeZone="America/New_York"
       dataSource={calendarEvents}

@@ -11,6 +11,7 @@ function PhotoAlbum({ currentUser, photos, setPhotos }) {
 
   const [showPhoto, setShowPhoto] = useState(false);
   const [currentPhoto, setCurrentPhoto] = useState(null);
+  const [sortByFavorites, setSortByFavorites] = useState(false);
 
   function showUploadBox() {
     setUploadPhoto((uploadPhoto) => !uploadPhoto);
@@ -30,12 +31,14 @@ function PhotoAlbum({ currentUser, photos, setPhotos }) {
         });
     }
     // setPhotos(currentUser.photo_albums[0].photos);
-  }, []);
+  }, [setPhotos]);
 
   function favoritePhoto(favoritedPhoto) {
     const newPhotos = [...photos];
-    const photo = photos.find((photo) => photo.id === favoritedPhoto.id);
+    const photo = newPhotos.find((photo) => photo.id === favoritedPhoto.id);
+    console.log("photo: ", photo);
     newPhotos[photo] = favoritedPhoto;
+    // newPhotos[photo].favorite = !favoritedPhoto.favorite;
     setPhotos(newPhotos);
   }
 
@@ -44,9 +47,19 @@ function PhotoAlbum({ currentUser, photos, setPhotos }) {
     setPhotos(newPhotos);
   }
 
+  const sortedPhotos =
+    photos &&
+    photos.filter((photo) => {
+      if (sortByFavorites) {
+        return photo.favorite;
+      } else {
+        return true;
+      }
+    });
+
   const photoList =
     photos &&
-    photos.map((photo) => {
+    sortedPhotos.map((photo) => {
       return (
         <Photo
           key={photo.id}
@@ -59,9 +72,19 @@ function PhotoAlbum({ currentUser, photos, setPhotos }) {
       );
     });
 
+  function sortFavorites() {
+    setSortByFavorites((favorite) => !favorite);
+    // const sortedPhotos = [...photos].filter((photo) => photo.favorite);
+    // setPhotos(sortedPhotos);
+    console.log("sorted", sortedPhotos);
+  }
+
   return (
     <section className="photo-album-container">
-      <PhotoToolBar showUploadBox={showUploadBox} />
+      <PhotoToolBar
+        showUploadBox={showUploadBox}
+        sortFavorites={sortFavorites}
+      />
       {uploadPhoto ? (
         <PhotoUpload
           currentUser={currentUser}

@@ -7,7 +7,7 @@
   position: sticky;
   width: 100%;
   top: 0px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .navbar img {
@@ -36,11 +36,11 @@
 
 .navbar-links a:hover {
   color: lightgray;
-  background: rgb(86, 20, 151);
+  transform: scale(1.1);
 }
 
 .navbar-links .active {
-  background: rgb(86, 20, 151);
+  background: rgba(0, 31, 5, 0.904);
 }
 
 .toggle-button {

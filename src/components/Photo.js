@@ -21,6 +21,7 @@ function Photo({
   }
 
   function handleFavoriteClick() {
+    // favoritePhoto(photo);
     setIsFavorite((isFavorite) => !isFavorite);
     fetch(`http://localhost:3000/photo/${id}`, {
       method: "PATCH",

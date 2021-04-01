@@ -103,13 +103,21 @@
 }
 
 .upload-button {
+  color: rebeccapurple;
   background: none;
   border: none;
-  color: rebeccapurple;
+  position: relative;
 }
 
-.upload-button:hover {
+.upload-button:hover,
+.favorites-button:hover {
   transform: scale(1.1);
+}
+
+.favorites-button {
+  background: none;
+  border: none;
+  position: relative;
 }
 
 .photo-upload {

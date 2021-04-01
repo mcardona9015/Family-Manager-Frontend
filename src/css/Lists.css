@@ -75,7 +75,12 @@ textarea:hover {
 
 .list-item-content.checked {
   text-decoration: line-through;
-  color: rgba(0, 0, 0, 0.603);
+  color: rgba(0, 63, 11, 0.904);
+}
+
+.list-item .checkbox {
+  background: rgba(0, 63, 11, 0.904);
+  color: rgba(0, 63, 11, 0.904);
 }
 
 .list-item-delete {

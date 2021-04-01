@@ -85,6 +85,7 @@ function Login({ setCurrentUser }) {
         <input type="submit" value="Login" />
       </form>
       <section className="signup-container">
+        <h1>Signup today to start </h1>
         <button onClick={() => setSignup(true)}>Signup</button>
       </section>
       {signup ? (

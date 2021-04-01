@@ -46,13 +46,12 @@ function Calendar() {
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(appointmentData),
-      })
-        .then((response) => response.json())
-        .then((newData) => {
-          const newEvents = [...calendarEvents];
-          newEvents.push(newData);
-          setCalendarEvents(newEvents);
-        });
+      }).then((response) => response.json());
+      // .then((newData) => {
+      //   const newEvents = [...calendarEvents];
+      //   newEvents.push(newData);
+      //   setCalendarEvents(newEvents);
+      // });
     }
   }
 
