@@ -32,9 +32,9 @@ function Navbar({ setCurrentUser }) {
         <NavLink to="/calendar">Calendar</NavLink>
         <NavLink to="/lists">Lists</NavLink>
         {/* <NavLink to="/profile">Profile</NavLink> */}
-        <a href="/logout" onClick={handleLogout}>
+        <NavLink to="/home" onClick={handleLogout}>
           Logout
-        </a>
+        </NavLink>
       </div>
     </nav>
   );
