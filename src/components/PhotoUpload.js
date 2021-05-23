@@ -35,11 +35,14 @@ function PhotoUpload({ currentUser, setPhotos, photos, setUploadPhoto }) {
         };
         console.log("newPhoto:", newPhoto);
 
-        const backendPost = await fetch("http://localhost:3000/photo", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newPhoto),
-        });
+        const backendPost = await fetch(
+          "https://my-family-manager.herokuapp.com/photo",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newPhoto),
+          }
+        );
         const photoData = await backendPost.json();
         console.log("photoData: ", photoData);
         setPhotos((photos) => [...photos, photoData]);

@@ -8,15 +8,17 @@ import { Image } from "cloudinary-react";
 function Home({ currentUser, setCurrentUser }) {
   const { calendars, lists, photo_albums } = currentUser;
 
-  let mostRecentList = lists.length
-    ? lists.sort((a, b) => new Date(a.updated_at) - new Date(b.updated_at))[
-        lists.length - 1
-      ]
-    : null;
+  let mostRecentList =
+    lists && lists.length
+      ? lists.sort((a, b) => new Date(a.updated_at) - new Date(b.updated_at))[
+          lists.length - 1
+        ]
+      : null;
 
-  let fav_photos = photo_albums.length
-    ? photo_albums[0].photos.filter((photo) => photo.favorite === true)
-    : null;
+  let fav_photos =
+    photo_albums && photo_albums.length
+      ? photo_albums[0].photos.filter((photo) => photo.favorite === true)
+      : null;
   let photo = fav_photos
     ? fav_photos[Math.floor(Math.random() * fav_photos.length)]
     : null;
@@ -43,7 +45,7 @@ function Home({ currentUser, setCurrentUser }) {
         />
       </section>
       <section className="recent-list-container">
-        {lists.length ? (
+        {lists && lists.length ? (
           <List className="recent-list" list={mostRecentList} />
         ) : null}
       </section>

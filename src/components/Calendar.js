@@ -12,7 +12,7 @@ function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [calendarEvents, setCalendarEvents] = useState(null);
   console.log("calendarEvents: ", calendarEvents);
-  const url = "http://localhost:3000/calendar";
+  const url = "https://my-family-manager.herokuapp.com/calendar";
 
   useEffect(() => {
     const token = localStorage.getItem("token");

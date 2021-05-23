@@ -20,7 +20,7 @@ function PhotoAlbum({ currentUser, photos, setPhotos }) {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3000/photo", {
+      fetch("https://my-family-manager.herokuapp.com/photo", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

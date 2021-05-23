@@ -23,7 +23,7 @@ function Photo({
   function handleFavoriteClick() {
     // favoritePhoto(photo);
     setIsFavorite((isFavorite) => !isFavorite);
-    fetch(`http://localhost:3000/photo/${id}`, {
+    fetch(`https://my-family-manager.herokuapp.com/photo/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +42,7 @@ function Photo({
     //   .then((res) => res.json())
     //   .then(console.log);
 
-    fetch(`http://localhost:3000/photo/${id}`, {
+    fetch(`https://my-family-manager.herokuapp.com/photo/${id}`, {
       method: "DELETE",
     }).then(() => removePhoto(photo));
   }

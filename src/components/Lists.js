@@ -12,7 +12,7 @@ function Lists() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3000/list", {
+      fetch("https://my-family-manager.herokuapp.com/list", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +31,7 @@ function Lists() {
   function handleNewListClick() {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3000/list", {
+      fetch("https://my-family-manager.herokuapp.com/list", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

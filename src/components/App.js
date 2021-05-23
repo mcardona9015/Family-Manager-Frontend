@@ -14,7 +14,7 @@ function App() {
   // const dispatch = useDispatch();
   // const currentUser = useSelector((storeState) => storeState.currentUser);
   const [currentUser, setCurrentUser] = useState(null);
-  // const [lists, setLists] = useState(null);
+  const [lists, setLists] = useState(null);
   const [photos, setPhotos] = useState(null);
   let location = useLocation();
 
@@ -22,7 +22,7 @@ function App() {
     if (location.pathname === "/home") {
       const token = localStorage.getItem("token");
       if (token) {
-        fetch("http://localhost:3000/me", {
+        fetch("https://my-family-manager.herokuapp.com/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -42,7 +42,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://localhost:3000/me", {
+      fetch("https://my-family-manager.herokuapp.com/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -86,7 +86,7 @@ function App() {
               <Calendar />
             </Route>
             <Route exact path="/lists">
-              {/* <Lists lists={lists} setLists={setLists} /> */}
+              <Lists lists={lists} setLists={setLists} />
               <Lists />
             </Route>
           </>

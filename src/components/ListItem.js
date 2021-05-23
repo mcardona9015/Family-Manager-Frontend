@@ -16,7 +16,7 @@ function ListItem({
   function newListItem(e) {
     e.preventDefault();
     if (e.target.value) {
-      fetch("http://localhost:3000/listItem", {
+      fetch("https://my-family-manager.herokuapp.com/listItem", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ function ListItem({
 
   function updateListItem(e) {
     e.preventDefault();
-    fetch(`http://localhost:3000/listItem/${id}`, {
+    fetch(`https://my-family-manager.herokuapp.com/listItem/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ function ListItem({
   }
 
   function deleteListItem() {
-    fetch(`http://localhost:3000/listItem/${id}`, {
+    fetch(`https://my-family-manager.herokuapp.com/listItem/${id}`, {
       method: "DELETE",
     });
     removeListItem(listItem);
@@ -55,9 +55,11 @@ function ListItem({
 
   function onCheck(e) {
     console.log(e.target.checked);
+    console.log(listItem);
     if (id) {
       setChecked((checked) => !checked);
-      fetch(`http://localhost:3000/listItem/${id}`, {
+      sortListItems(listItem);
+      fetch(`https://my-family-manager.herokuapp.com/listItem/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

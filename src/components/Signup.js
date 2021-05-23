@@ -20,7 +20,7 @@ function Signup({ setSignup, setCurrentUser }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/signup", {
+    fetch("https://my-family-manager.herokuapp.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,14 +71,14 @@ function Signup({ setSignup, setCurrentUser }) {
             />
             <br />
 
-            <input
+            {/* <input
               placeholder="Profile Picture"
               type="text"
               name="profile_pic"
               value={profile_pic}
               onChange={handleChange}
             />
-            <br />
+            <br /> */}
             {/* <img
               src={
                 profile_pic.length

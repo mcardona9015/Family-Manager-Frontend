@@ -40,7 +40,7 @@ function List({ list, removeList }) {
 
   function updateListTitle(e) {
     e.preventDefault();
-    fetch(`http://localhost:3000/list/${id}`, {
+    fetch(`https://my-family-manager.herokuapp.com/list/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ function List({ list, removeList }) {
   }
 
   function deleteList() {
-    fetch(`http://localhost:3000/list/${id}`, {
+    fetch(`https://my-family-manager.herokuapp.com/list/${id}`, {
       method: "DELETE",
     });
     removeList(list);

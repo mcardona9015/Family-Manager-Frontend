@@ -19,7 +19,7 @@ function Login({ setCurrentUser }) {
   function handleSubmit(e) {
     e.preventDefault();
     // request => POST /login
-    fetch("http://localhost:3000/login", {
+    fetch("https://my-family-manager.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
