@@ -14,7 +14,7 @@ This app was built using create react app. To launch this app locally run `npm s
 
 ---
 
-The back end is hosted on [Heroku](https://my-family-manager.herokuapp.com/), and you can find the GitHub repo [here](https://github.com/mcardona9015/phase-5-project-backend).
+The back end is hosted on [Heroku](https://my-family-manager.herokuapp.com/), and you can find the GitHub repo [here](https://github.com/mcardona9015/Family-Manager-Backend).
 
 ## Contact
 
